@@ -1,12 +1,23 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Messages from "./Pages/Messages";
+import Login from "./Pages/Login";
+import Notepad from "./Pages/Notepad";
+import Queries from "./Pages/Queries";
+
+
+
+
 
 function App() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950">
-      <h1 className="text-4xl font-bold text-white">
-        Hello Vite + React + TypeScript + Tailwind!
-      </h1>
-    </div>
+  return ( 
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/Messages" element={<Messages />} />
+        <Route path="/Notepad" element={<Notepad />} />
+        <Route path="/Queries" element={<Queries />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
