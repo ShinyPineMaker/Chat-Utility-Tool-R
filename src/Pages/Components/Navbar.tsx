@@ -15,7 +15,7 @@ export default function Navbar () {
 
     return (
         <div>
-            <nav className="bg-gray-100">
+            <nav className="bg-blue-300">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex justify-between">
 
@@ -36,7 +36,7 @@ export default function Navbar () {
                         <Link to="/Notepad" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
                             <span className="font-bold">Notepad</span>
                         </Link>
-                        <Link to="/Query" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
+                        <Link to="/Queries" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
                             <span className="font-bold">Query</span>
                         </Link>
                     </div>
@@ -78,12 +78,6 @@ export default function Navbar () {
             </div>
             </nav> 
             
-            
-
-            {/* content goes here
-            <div className="py-32 text-center">
-                <h2 className="font-extrabold text-4xl">Navbars in Tailwind!</h2>
-            </div> */}
         </div>
     )
 }
