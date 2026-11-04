@@ -9,7 +9,7 @@ function Queries() {
             {Header()}
             <div className="min-h-screen flex items-center justify-center            bg-linear-to-t from-blue-950 via-blue-700 to-blue-400">
                 <h1>
-                    This is The Messages Page!
+                    This is The Queries Page!
                 </h1>
             </div>
             
