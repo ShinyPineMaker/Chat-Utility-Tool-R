@@ -1,8 +1,5 @@
-interface QueriesProps {
-    
-}
 
-function Queries(props: QueriesProps) {
+function Queries() {
     
 
     return (

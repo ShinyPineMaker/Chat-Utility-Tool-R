@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+export default function Navbar () {
+
+    const[isHidden, setIsHidden] = useState(true);   
+
+    let name = localStorage.getItem("name");
+    if (name==null || name==""){
+        name = "Clique aqui para alterar o nome";
+    }
+
+    
 
 
-function Navbar () {
     return (
         <div>
             <nav className="bg-gray-100">
@@ -22,10 +33,10 @@ function Navbar () {
                         <Link to="/Messages" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
                             <span className="font-bold">Messages</span>
                         </Link>
-                        <Link to="/Messages" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
+                        <Link to="/Notepad" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
                             <span className="font-bold">Notepad</span>
                         </Link>
-                        <Link to="/Messages" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
+                        <Link to="/Query" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
                             <span className="font-bold">Query</span>
                         </Link>
                     </div>
@@ -33,48 +44,46 @@ function Navbar () {
 
                 {/* <!-- secondary nav --> */}
                 <div className="hidden md:flex items-center space-x-1">
-                    <Link to="/Messages" className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                        <span className="font-bold">You</span>
+                    <Link to="/" className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+                        <span className="font-bold">{name}</span>
                     </Link>
                 </div>
 
             
-            {/*     <!-- mobile button goes here --> 
+            {/* <!-- mobile button goes here -->  */}
                 <div className="md:hidden flex items-center">
-                    <button className="mobile-menu-button">
+                    <button className="mobile-menu-button" onClick={() => setIsHidden(!isHidden)}>
                     <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                     </button>
                 </div>
-            */}
+            
             
             </div>
             </div>
 
-            {/*}
-                    <!-- mobile menu -->
-            <div className="mobile-menu hidden md:hidden">
-                <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Features</a>
-                <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Pricing</a>
+            
+            {/* <!-- mobile menu --> */}
+            <div className={isHidden ? "mobile-menu hidden md:hidden" : "mobile-menu md:hidden"}>
+                <Link to="/Messages" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
+                    <span className="font-bold">Messages</span>
+                </Link>
+                <Link to="/Notepad" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
+                    <span className="font-bold">Notepad</span>
+                </Link>
+                <Link to="/Query" className="flex items-center py-5 px-4 text-gray-700 hover:text-gray-900">
+                    <span className="font-bold">Query</span>
+                </Link>
             </div>
-
-            */}
-
             </nav> 
             
             
 
-            {/* content goes here 
+            {/* content goes here
             <div className="py-32 text-center">
-            <h2 className="font-extrabold text-4xl">Navbars in Tailwind!</h2>
-            </div>
-            */}
+                <h2 className="font-extrabold text-4xl">Navbars in Tailwind!</h2>
+            </div> */}
         </div>
     )
 }
-
-
-        
-
-export default Navbar

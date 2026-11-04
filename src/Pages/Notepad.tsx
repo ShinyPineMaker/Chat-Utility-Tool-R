@@ -1,8 +1,4 @@
-interface NotepadProps {
-    
-}
-
-function Notepad(props: NotepadProps) {
+function Notepad() {
     
 
     return (
