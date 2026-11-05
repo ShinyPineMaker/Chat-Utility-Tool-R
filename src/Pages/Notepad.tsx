@@ -34,7 +34,7 @@ function Notepad() {
                         <h1 className="font-bold text-2xl">NotePad: </h1>
                     </div>
 
-                    <textarea className="flex justify-center p-2 h-full w-full bg-gray-200" onChange={(e)=>saveNotepadText(e.target.value)}>
+                    <textarea className="flex justify-center p-2 h-11/12 w-full bg-gray-200" onChange={(e)=>saveNotepadText(e.target.value)}>
                         {textArea}
                     </textarea>
                 </div>
