@@ -26,53 +26,40 @@ function saveMessages(messages: string[]){
 
 
 
-function addMessages(){
-    const storedMessages = getMessages();
-    
-    let newMessage = prompt("Insert a new message", "Hello, how are you?");
-    if (newMessage === null){
-        return ;
-    }
-    if (newMessage.trim()=== ""){
-        return ;
-    }
-    storedMessages.push(newMessage.trim());
-    saveMessages(storedMessages);
+const copyText = (text: string) => {
+    navigator.clipboard.writeText(text);
+    alert("copied");
 }
-
-
-
-
-
-
-
-
-function initMessages(){
-
-    const [messages, setMessages] = useState(() => getMessages()) ;
-
-    useEffect(() => {
-        saveMessages(messages);
-    }, [messages]);
-
-    return (
-        <ul className="border-t border-dotted">
-            {messages.map((msg, i) =>
-            (
-                <li className="border rounded-2xl px-3 py-2 mx-2 my-4 hover:font-bold" key={i}>
-                    {msg}
-                </li>
-            ))}
-        </ul>
-    )
-}
-
 
 
 function Messages() {
-    return(
 
+    const name = localStorage.getItem("name");
+    const [messages, setMessages] = useState (()=> getMessages());
+
+    useEffect(()=>{
+        localStorage.setItem("messages", JSON.stringify(messages));
+    }, [messages])
+
+
+    function addMessages(){
+        const storedMessages = getMessages();
         
+        let newMessage = prompt("Insert a new message", "Hello, how are you?");
+        if (newMessage === null){
+            return ;
+        }
+        if (newMessage.trim()=== ""){
+            return ;
+        }
+        storedMessages.push(newMessage.trim());
+        saveMessages(storedMessages);
+        setMessages(storedMessages);
+    }
+
+    
+
+    return(        
         
         <div>
             {Header()}
@@ -86,7 +73,22 @@ function Messages() {
                         </svg>
                     </button>
                     <div>
-                        {initMessages()}
+                        {/* Default pre-made messages go here */}
+                        <ul>
+                            <li onClick={(e)=>copyText(e.currentTarget.textContent)} className="border rounded-2xl px-3 py-2 mx-2 my-4 hover:font-bold">
+                                Bom dia, Meu nome é {name}!
+                            </li>
+                        </ul>
+                    
+                        {/* User added messages go here */}
+                        <ul className="border-t border-dotted">
+                            {messages.map((msg, i) =>
+                            (
+                                <li onClick={(e)=>copyText(e.currentTarget.textContent)}  className="border rounded-2xl px-3 py-2 mx-2 my-4 hover:font-bold"  key={i}>
+                                    {msg}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                     
                 </div>
