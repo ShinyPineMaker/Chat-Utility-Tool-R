@@ -1,16 +1,36 @@
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import { useState } from "react";
+
+
+
+
+
+
 
 function Notepad() {
     
+    const getNotepadText = () => {
+        return (localStorage.getItem("notepadText"));
+    }
+
+    const [textArea, setTextArea] = useState(() => getNotepadText());
+   
+
+    const saveNotepadText = (input: string) => {
+        localStorage.setItem("notepadText", input);
+        setTextArea(input);
+    }
 
     return (
         <div>
             {Header()}
-            <div className="min-h-screen flex items-center justify-center            bg-linear-to-t from-blue-950 via-blue-700 to-blue-400">
-                <h1>
-                    This is Notepad Page!
-                </h1>
+            <div className="min-h-screen max-w-full flex items-center justify-center            bg-linear-to-t from-blue-950 via-blue-700 to-blue-400">
+                <div className="flex-col justify-center border m-5 p-10 rounded-2xl h-dvh w-10/12 bg-blue-400">
+                    <textarea className="flex justify-center p-2 h-full w-full bg-gray-200" onChange={(e)=>saveNotepadText(e.target.value)}>
+                        {textArea}
+                    </textarea>
+                </div>
             </div>
             
 
