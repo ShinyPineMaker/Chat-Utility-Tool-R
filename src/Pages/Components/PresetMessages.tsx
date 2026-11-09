@@ -6,22 +6,28 @@ type Message = {
 
 
 
-const name = localStorage.getItem("name");
-
-function getTimeofDay(date: Date = new Date()): string {
-    const h = date.getHours(); // 0–23, local time
-    if (h >= 6 && h < 12) return "Bom dia";
-    if (h >= 12 && h < 19) return "Boa tarde";
-    return "Boa noite"; // 19:00–23:59 and 00:00–05:59
-}
 
 
-export const presetMessages: Message[] = [
+
+
+
+
+
+const getPresetMessages = () => {
+
+    function getTimeofDay(date: Date = new Date()): string {
+        const h = date.getHours(); // 0–23, local time
+        if (h >= 6 && h < 12) return "Bom dia";
+        if (h >= 12 && h < 19) return "Boa tarde";
+        return "Boa noite"; // 19:00–23:59 and 00:00–05:59
+    }
+    const name = localStorage.getItem("name");
+    const presetMessages: Message[] = [
 
         
 
         //cumprimento/saudação
-        { text: `${getTimeofDay}, meu nome é ${name}, sou do suporte técnico, como posso ajudar?`, altText: `Boa noite, meu nome é ${name}, sou do suporte técnico, como posso ajudar?`, isAlt: false},
+        { text: `${getTimeofDay()}, meu nome é ${name}, sou do suporte técnico, como posso ajudar?`, altText: `Boa noite, meu nome é ${name}, sou do suporte técnico, como posso ajudar?`, isAlt: false},
 
         //solicitações
         { text: `Poderia informar o CPF do titular?` },
@@ -59,4 +65,9 @@ https://comologar.com.br/` },
         { text: `Seu plano foi habilitado provisoriamente por 72 horas, caso o pagamento não seja identificado pelo sistema ele será inativado novamente.` },
 
         { text: `Houve um rompimento na sua região, só aguardar que nossos técnicos estão verificando.` },
-]
+];
+
+    return presetMessages
+}
+
+export default getPresetMessages;

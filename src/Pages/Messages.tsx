@@ -1,8 +1,7 @@
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { useState, useEffect } from "react";
-
-
+import getPresetMessages from "./Components/PresetMessages";
 
 
 
@@ -34,58 +33,14 @@ function saveMessages(messages: string[]){
 function Messages() {
 
 
-    const name = localStorage.getItem("name");
+    
     const [copyThat, setCopyThat] = useState("");
-
     const [messages, setMessages] = useState (()=> getMessages());
-    
+    const presetMessages = getPresetMessages();
 
     
 
-    const [presetMessages] = useState([
-
-        { text: `Boa tarde, meu nome é ${name}, sou do suporte técnico, como posso ajudar?`, alt: `Boa noite, meu nome é ${name}, sou do suporte técnico, como posso ajudar?`, isAlt: false},
-
-        { text: `Pode me informar o CPF do titular para eu verificar?` },
-
-        { text: `Realizei alguns procedimentos padrões, pode desligar o roteador e modem da tomada por 5 minutos?` },
-
-        { text: `Pode enviar uma foto ou vídeo dos aparelhos de internet?` },
-
-        { text: `Nesse caso, posso agendar uma visita do técnico, quando você teria disponibilidade?` },
-
-        { text: `Atendimento agendado para hoje, nós entraremos em contato quando o técnico for ao local, só aguardar. Caso o técnico não consiga ir hoje até as 18 horas o atendimento é reagendado para amanhã. Qualquer outra questão só entrar em contato, tenha uma boa tarde!` },
-
-        { text: `Atendimento encerrado devido à falta de comunicação, Fleetnet agradece o contato. Caso necessário, pode enviar uma nova mensagem para esse contato que abrimos um novo atendimento para resolver seu problema.` },
-
-        { text: `Para verificar sobre assuntos financeiros, cancelamento, planos disponíveis, mudança de endereço ou titularidade, apenas com o setor comercial, vou transferir a conversa, só um momento.` },
-
-        { text: `Nossos técnicos de campo atendem das 9 às 18 todo dia, entramos em contato com você alguns minutos antes do técnico ir ao local. Não fazemos atendimento com horário fixo pois a agenda dos técnicos muda durante o dia e não tem como garantir prioridade para todo cliente. Caso não entramos em contato ou o técnico não compareça até às 18 o atendimento é reagendado para o dia seguinte, com prioridade.` },
-
-        { text: `Esses tipos de aparelhos não são homologados pela Anatel, e podem interferir com a conexão da sua rede, posso agendar para um técnico verificar a conexão da sua casa mas caso o problema seja nesse aparelho nós não prestamos manutenção, teria que ficar por conta de um técnico particular.` },
-
-        { text: `Você pode realizar o pagamento da fatura através do nosso ou aplicativo ou por esse link: 
-
-https://autoatendimento.infoss.com.br/app?tid=289814&prevdoc
-
-Para mais informações entre em contato com nosso setor comercial durante horário comercial, tenha uma boa noite!` },
-
-        { text: `Para ativar os aplicativos acesse esse site:
-
-https://www.portaldoassinante.com/fleetnet/login
-
-Para entrar no aplicativo através do cadastro fleetnet siga as instruções no link:
-
-https://comologar.com.br/` },
-
-        { text: `Para verificar sobre assuntos financeiros, cancelamento, planos disponíveis, mudança de endereço ou titularidade, apenas com o setor comercial, vou transferir a conversa, só um momento.` },
-
-        { text: `Seu atendimento já está na agenda do tecnico, só aguardar que assim que possivel o tecnico vai no local.` },
-
-        { text: `Seu plano foi habilitado provisoriamente por 72 horas, caso o pagamento não seja identificado pelo sistema ele será inativado novamente.` },
-
-        { text: `Houve um rompimento na sua região, só aguardar que nossos técnicos estão verificando.` },
-    ]);
+    
 
 
 
