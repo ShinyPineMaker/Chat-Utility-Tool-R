@@ -5,7 +5,7 @@ type Route = {
 
 
 
-export const routes: Route[] = [
+export const fleetRoutes: Route[] = [
     {
         routeName: "Rota 1",
         neighbourhoods: [
@@ -249,14 +249,14 @@ export const routes: Route[] = [
     {
         routeName: "Rota A",
         neighbourhoods: [
-        "Jardim Paraiso (Naviraí)",
+        "Jardim Paraiso",
         "Vila Nova",
         "Nelson Trad (CDHU)",
         "Parque Industrial",
         "Jardim Taruma",
         "Jardim Alvorada",
         "Residencial Athenas",
-        "Jardim Belo Horizonte (Naviraí)",
+        "Jardim Belo Horizonte",
         "Vila Alta",
         "Sucupira",
         "Interlagos",
@@ -265,8 +265,8 @@ export const routes: Route[] = [
     {
         routeName: "Rota B",
         neighbourhoods: [
-        "Jardim Progresso (Naviraí)",
-        "Jardim Eldorado (Naviraí)",
+        "Jardim Progresso",
+        "Jardim Eldorado",
         "Conjunto Harry Amorim Costa",
         "Residencial Portinari",
         "Jardim Uniao",
@@ -300,7 +300,7 @@ export const routes: Route[] = [
         "Portal Park Residence",
         "Varjao",
         "Parque Beija Flor",
-        "Inocoop (Naviraí)",
+        "Inocoop",
         "Jardim Campo Belo",
         "Monte Fuji",
         "BNH",
@@ -310,7 +310,7 @@ export const routes: Route[] = [
     {
         routeName: "Rota E",
         neighbourhoods: [
-        "Green Park (Naviraí)",
+        "Green Park",
         "Classe A",
         "Royal Park",
         "Residencial Eco Park",
