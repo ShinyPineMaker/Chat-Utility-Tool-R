@@ -112,10 +112,10 @@ function Messages() {
 
                 
 
-                <div className="flex-col justify-center border m-5 p-10 rounded-2xl w-8/12 h-fit bg-blue-400">
+                <div className="flex-col justify-center border m-5 p-10 rounded-2xl w-8/12 h-fit bg-blue-400 text-2xl">
 
                     <div className="flex w-full border-b border-dotted mb-5">
-                        <h1 className="inline-flex w-11/12 font-bold text-2xl">Messages: </h1>
+                        <h1 className="inline-flex w-11/12 font-bold text-4xl">Messages: </h1>
 
                         <span className="inline-flex w-full font-bold">
                             {copyThat}

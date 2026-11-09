@@ -15,7 +15,7 @@ export default function Navbar () {
 
     return (
         <div>
-            <nav className="bg-blue-400 border-2">
+            <nav className="bg-blue-400 border-2 text-2xl">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex justify-between">
 

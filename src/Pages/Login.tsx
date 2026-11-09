@@ -16,7 +16,7 @@ export default function Login() {
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center            bg-linear-to-t from-blue-950 via-blue-700 to-blue-400">
+        <div className="min-h-screen flex items-center justify-center            bg-linear-to-t from-blue-950 via-blue-700 to-blue-400 text-2xl">
             
             <form onSubmit={saveName}>
                 <div>

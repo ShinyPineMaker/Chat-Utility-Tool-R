@@ -4,7 +4,7 @@ import Navbar from "./Navbar.tsx"
 function Header() {
     return (
         <div>
-            {Navbar()}
+            <Navbar />
         </div>
     );
 }

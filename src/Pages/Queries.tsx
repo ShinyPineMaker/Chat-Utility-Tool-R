@@ -6,15 +6,15 @@ function Queries() {
 
     return (
         <div>
-            {Header()}
-            <div className="min-h-screen flex items-center justify-center            bg-linear-to-t from-blue-950 via-blue-700 to-blue-400">
+            <Header />
+            <div className="min-h-screen flex items-center justify-center            bg-linear-to-t from-blue-950 via-blue-700 to-blue-400 text-2xl">
                 <h1>
                     This is The Queries Page!
                 </h1>
             </div>
             
 
-        {Footer()}
+        <Footer />
         </div>
     );
 }
